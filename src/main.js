@@ -84,7 +84,7 @@ const applySorting = initSorting([
   sampleTable.header.elements.sortByTotal,
 ]);
 
-const applySearching = initSearching(sampleTable.search.elements.search); 
+const applySearching = initSearching('search'); 
 
 const {applyFiltering, updateIndexes} = initFiltering(sampleTable.filter.elements, {
   // передаём элементы фильтра
