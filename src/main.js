@@ -95,10 +95,10 @@ const appRoot = document.querySelector('#app');
 appRoot.appendChild(sampleTable.container);
 
 async function init() {
-    const indexes = await API.getIndexes();
+  const indexes = await API.getIndexes();
 
-    updateIndexes(sampleTable.filter.elements, {
-        searchBySeller: indexes.sellers
+  updateIndexes(sampleTable.filter.elements, {
+    searchBySeller: indexes.sellers
     });
 }
 
