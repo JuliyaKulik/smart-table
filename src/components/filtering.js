@@ -13,18 +13,13 @@ export function initFiltering(elements) {
   };
 
   const applyFiltering = (query, state, action) => {
-    const clearButtons = document.querySelectorAll('button[name="clear"]');
-    clearButtons.forEach((button) => {
-      button.addEventListener('click', (event) => {
-        const parentElement = button.closest('.filter-wrapper');
-        const inputField = parentElement.querySelector(
-          `input[name="${button.dataset.field}"]`
-        );
-        if (inputField) {
-          inputField.value = '';
-        }
-      });
-    });
+    if (action.name === 'clear') {
+    const inputElement = action.closest('.filter-wrapper').querySelector('input');
+    const fieldName = action.dataset.field;
+
+    inputElement.value = '';
+    state[fieldName] = '';
+  }
     // код с обработкой очистки поля
 
     // @todo: #4.5 — отфильтровать данные, используя компаратор
